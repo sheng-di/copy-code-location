@@ -1,8 +1,8 @@
 {
 	"name": "copy-code-location",
-	"displayName": "copy-code-location",
-	"description": "An extension to copy a code from a file, and automatically paste it in a formatted codeblock with the filename and file extension, as as optimized for LLM readability.",
-	"version": "0.0.1",
+	"displayName": "Copy Code Location",
+	"description": "Copy selected code with file path and line numbers, optimized for sharing with LLMs. Supports both relative and absolute paths.",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.96.0"
 	},
@@ -26,24 +26,36 @@
 	"keywords": [
 		"markdown",
 		"code-block",
-		"copy"
+		"copy",
+		"code-location",
+		"line-numbers",
+		"LLM"
 	],
-	"activationEvents": [
-		"onCommand:copy-code-location.copycode"
-	],
+	"activationEvents": [],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "copy-code-location.copycode",
-				"title": "Copy Code"
+				"command": "copy-code-location.copyRelative",
+				"title": "Copy Code with Relative Path"
+			},
+			{
+				"command": "copy-code-location.copyAbsolute",
+				"title": "Copy Code with Absolute Path"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "copy-code-location.copycode",
-				"key": "ctrl+Alt+C",
-				"mac": "Cmd+Shift+F9"
+				"command": "copy-code-location.copyRelative",
+				"key": "ctrl+alt+L",
+				"mac": "ctrl+alt+L",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "copy-code-location.copyAbsolute",
+				"key": "ctrl+alt+shift+L",
+				"mac": "ctrl+alt+shift+L",
+				"when": "editorTextFocus"
 			}
 		]
 	},

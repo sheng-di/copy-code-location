@@ -1,24 +1,58 @@
-# copy-code-and-filename
+# Copy Code Location
 
-Copy code with automatic code-block formatter including filename and file extension.
-Optimized for quickly sharing code with LLMs whereby they easily recognize the language of code in the file.
+Copy selected code with file path and line numbers — optimized for sharing with LLMs.
 
 ## Features
 
-_Transform this:_
-const a;
+Copy code with **relative path** or **absolute path**, including line number range:
 
-_to this:_
-```filename.js
-const a;
+**Relative path output:**
+```
+packages/client/src/client/streamableHttp.ts:221-224
+```
+// Try to open an initial SSE stream with GET to listen for server messages
+// This is optional according to the spec - server may not support it
+const headers = await this._commonHeaders();
+headers.set('Accept', 'text/event-stream');
+```
 ```
 
-_with adding template literals and new lines:_
-\`\`\`\n${copiedContent}\n\`\`\`
+**Absolute path output:**
+```
+/Users/username/project/packages/client/src/client/streamableHttp.ts:221-224
+```
+// Try to open an initial SSE stream with GET to listen for server messages
+// This is optional according to the spec - server may not support it
+const headers = await this._commonHeaders();
+headers.set('Accept', 'text/event-stream');
+```
+```
 
-### Default keybinding
+**Single line selection:**
+```
+packages/client/src/client/streamableHttp.ts:221-221
+```
+// Try to open an initial SSE stream with GET to listen for server messages
+```
+```
 
-- Windows: ```Ctrl+Alt+C```
-- Mac: ```Cmd+Shift+F9```
+## Keyboard Shortcuts
+
+| Command | Windows/Linux | Mac |
+|---------|--------------|-----|
+| Copy with Relative Path | `Ctrl+Alt+L` | `Cmd+Alt+L` |
+| Copy with Absolute Path | `Ctrl+Alt+Shift+L` | `Cmd+Alt+Shift+L` |
+
+## How It Works
+
+- **Relative Path**: Calculates path from workspace root. Works correctly with multi-folder workspaces.
+- **Absolute Path**: Uses the full file system path.
+- **Line Numbers**: Automatically includes the line range of your selection.
+
+## Use Cases
+
+- Share code snippets with LLMs (ChatGPT, Claude, etc.)
+- Create precise code references in documentation
+- Quick code location sharing in team communication
 
 **Enjoy!**
