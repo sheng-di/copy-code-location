@@ -1,0 +1,63 @@
+{
+  "name": "copy-code-and-filename",
+  "displayName": "copy-code-and-filename",
+  "description": "An extension to copy a code from a file, and automatically paste it in a formatted codeblock with the filename and file extension, as as optimized for LLM readability.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "publisher": "alexander-deleo",
+	"author": {
+		"name": "Alexander-Deleeck"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Alexander-Deleeck/copy-code-and-filename"
+	},
+	"icon": "images/copy-code-with-extension-icon.png",
+	"galleryBanner": {
+		"color": "#232323",
+		"theme": "dark"
+	},
+  "categories": [
+		"Formatters",
+		"Other"
+	],
+	"keywords": [
+		"markdown",
+		"code-block",
+		"copy"
+	],
+  "activationEvents": [
+		"onCommand:copy-code-and-filename.copycode"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "copy-code-and-filename.copycode",
+				"title": "Copy Code"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "copy-code-and-filename.copycode",
+				"key": "ctrl+Alt+C",
+				"mac": "Cmd+Shift+F9"
+			}
+		]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.16.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
