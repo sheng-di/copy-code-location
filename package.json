@@ -2,7 +2,7 @@
 	"name": "copy-code-location",
 	"displayName": "Copy Code Location",
 	"description": "Copy selected code with file path and line numbers, optimized for sharing with LLMs. Supports both relative and absolute paths.",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.96.0"
 	},
