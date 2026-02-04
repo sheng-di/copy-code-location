@@ -40,8 +40,8 @@ packages/client/src/client/streamableHttp.ts:221-221
 
 | Command | Windows/Linux | Mac |
 |---------|--------------|-----|
-| Copy with Relative Path | `Ctrl+Alt+L` | `Cmd+Alt+L` |
-| Copy with Absolute Path | `Ctrl+Alt+Shift+L` | `Cmd+Alt+Shift+L` |
+| Copy with Relative Path | `Ctrl+Alt+L` | `Ctrl+Alt+L` |
+| Copy with Absolute Path | `Ctrl+Alt+Shift+L` | `Ctrl+Alt+Shift+L` |
 
 ## How It Works
 
