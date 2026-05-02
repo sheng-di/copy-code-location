@@ -67,7 +67,21 @@
 				"mac": "ctrl+alt+shift+V",
 				"when": "editorTextFocus"
 			}
-		]
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "copy-code-location.copyRelative",
+					"when": "editorTextFocus",
+					"group": "9_cutcopypaste"
+				},
+				{
+					"command": "copy-code-location.copyAbsolute",
+					"when": "editorTextFocus",
+					"group": "9_cutcopypaste"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
